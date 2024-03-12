@@ -10,7 +10,9 @@ Implementation of paper "Surface-SOS: Self-Supervised Object Segmentation via Ne
 To utilize multiresolution hash encoding or fully fused networks provided by tiny-cuda-nn, you should have least an RTX 2080Ti, see https://github.com/NVlabs/tiny-cuda-nn#requirements for more details.
 
 ### Environments
+```
 conda create -n sos python==3.8
+```
 
 Install PyTorch>=1.10 here based the package management tool you used and your cuda version. For example：
 ```
