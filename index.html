@@ -1,322 +1,303 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Description" content="PKU-DyMVHumans: A Multi-View Video Benchmark for High-Fidelity Dynamic Human Modeling.">
-  <meta name="Keywords" content="DyMVHumans, NeRF, NeuS">
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2487">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000; min-height: 14.0px}
-    span.s1 {font-kerning: none}
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Surface-SOS: Self-Supervised Object Segmentation via Neural Surface Representation.">
+  <meta name="keywords" content="Surface-SOS, Segmentation, NeuS">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Surface-SOS: Self-Supervised Object Segmentation via Neural Surface Representation</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+<!--   <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <style>
+        .container-h {
+            width: 90%; /* 或者根据需要设置为其他宽度 */
+            margin: auto; /* 居中显示 */
+        }
+
   </style>
+
+    <style>
+        .fixed-size-video {
+            width: 940px; /* 设置视频的固定宽度 */
+            height: auto; /* 设置视频的固定高度 */
+        }
+    </style>
+
+    <style>
+        .fixed-size-video-small {
+            width: 700px; /* 设置视频的固定宽度 */
+            height: auto; /* 设置视频的固定高度 */
+        }
+        .rounded-corners {
+    border-radius: 10px; /* 设置圆角的大小 */
+  }
+    </style>
+    <style>
+        .video-container {
+            height: 600px; /* 统一设置视频高度 */
+            width: auto;   /* 宽度自适应 */
+        }
+    </style>
+    <style>
+        .video-container {
+            display: flex;         /* 使用 flexbox 布局 */
+            justify-content: center; /* 水平居中 */
+        }
+        .video-container video {
+            width: 30%;           /* 每个视频宽度占容器的30% */
+            margin: 5px;          /* 视频之间的间隔 */
+        }
+    </style>
+
+<style>
+  .video-row {
+    display: flex;
+    justify-content: space-around; /* 可以改为 center 使得视频在行中居中 */
+    margin-bottom: 20px; /* 行与行之间的间距 */
+  }
+
+  .fixed-size-video-small {
+    width: 33%; /* 设置视频的固定宽度 */
+            height: auto; /* 设置视频的固定高度 */
+  }
+  .fixed-size-video-small-two {
+    width: 800px; /* 设置视频的固定宽度 */
+            height: auto; /* 设置视频的固定高度 */
+  }
+  .fixed-size-video-small-three {
+    width: 1340px; /* 设置视频的固定宽度 */
+            height: auto; /* 设置视频的固定高度 */
+  }
+  
+  /* 可能需要调整的样式 */
+  @media screen and (max-width: 768px) {
+    /* 在较小屏幕上，让视频堆叠而不是并排 */
+    .video-row {
+      flex-direction: column;
+    }
+  }
+</style>
+
+<style>
+        .text-container {
+            max-width: 1070px; /* 限制文本容器的最大宽度 */
+            margin: 0 auto;    /* 居中文本容器 */
+            padding: 20px;     /* 为容器添加一些内边距 */
+        }
+        
+</style>
+  
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;head&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta charset="utf-8"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta name="description"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>content="Surface-SOS: Self-Supervised Object Segmentation via Neural Surface Representation."&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta name="keywords" content="Surface-SOS, Segmentation, NeuS"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;title&gt;Surface-SOS: Self-Supervised Object Segmentation via Neural Surface Representation&lt;/title&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"&gt;&lt;/script&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>window.dataLayer = window.dataLayer || [];</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function gtag() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>dataLayer.push(arguments);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>gtag('js', new Date());</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>gtag('config', 'G-PYVRSFMDRL');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>rel="stylesheet"&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;link rel="stylesheet" href="./static/css/bulma.min.css"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;link rel="stylesheet" href="./static/css/bulma-carousel.min.css"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;link rel="stylesheet" href="./static/css/bulma-slider.min.css"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;link rel="stylesheet" href="./static/css/fontawesome.all.min.css"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;link rel="stylesheet"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;link rel="stylesheet" href="./static/css/index.css"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;!-- <span class="Apple-converted-space">  </span>&lt;link rel="icon" href="./static/images/favicon.svg"&gt; --&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"&gt;&lt;/script&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script defer src="./static/js/fontawesome.all.min.js"&gt;&lt;/script&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script src="./static/js/bulma-carousel.min.js"&gt;&lt;/script&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script src="./static/js/bulma-slider.min.js"&gt;&lt;/script&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script src="./static/js/index.js"&gt;&lt;/script&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;style&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.container-h {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 90%; /* 或者根据需要设置为其他宽度 */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin: auto; /* 居中显示 */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.fixed-size-video {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 940px; /* 设置视频的固定宽度 */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: auto; /* 设置视频的固定高度 */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.fixed-size-video-small {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 700px; /* 设置视频的固定宽度 */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: auto; /* 设置视频的固定高度 */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.rounded-corners {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border-radius: 10px; /* 设置圆角的大小 */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.video-container {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: 600px; /* 统一设置视频高度 */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: auto; <span class="Apple-converted-space">  </span>/* 宽度自适应 */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.video-container {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: flex; <span class="Apple-converted-space">        </span>/* 使用 flexbox 布局 */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>justify-content: center; /* 水平居中 */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.video-container video {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 30%; <span class="Apple-converted-space">          </span>/* 每个视频宽度占容器的30% */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin: 5px;<span class="Apple-converted-space">          </span>/* 视频之间的间隔 */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;style&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.video-row {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>display: flex;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>justify-content: space-around; /* 可以改为 center 使得视频在行中居中 */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin-bottom: 20px; /* 行与行之间的间距 */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.fixed-size-video-small {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>width: 33%; /* 设置视频的固定宽度 */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: auto; /* 设置视频的固定高度 */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.fixed-size-video-small-two {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>width: 800px; /* 设置视频的固定宽度 */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: auto; /* 设置视频的固定高度 */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.fixed-size-video-small-three {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>width: 1340px; /* 设置视频的固定宽度 */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: auto; /* 设置视频的固定高度 */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>/* 可能需要调整的样式 */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>@media screen and (max-width: 768px) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* 在较小屏幕上，让视频堆叠而不是并排 */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.video-row {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>flex-direction: column;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
-<p class="p1"><span class="s1">&lt;/style&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;style&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.text-container {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>max-width: 1070px; /* 限制文本容器的最大宽度 */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin: 0 auto;<span class="Apple-converted-space">    </span>/* 居中文本容器 */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 20px; <span class="Apple-converted-space">    </span>/* 为容器添加一些内边距 */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p1"><span class="s1">&lt;/style&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span></span></p>
-<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
-<p class="p1"><span class="s1">&lt;body&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;nav class="navbar" role="navigation" aria-label="main navigation"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="navbar-brand"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;span aria-hidden="true"&gt;&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;span aria-hidden="true"&gt;&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;span aria-hidden="true"&gt;&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="navbar-menu"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="navbar-start" style="flex-grow: 1; justify-content: center;"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;a class="navbar-item" href="https://github.com/zhengxyun"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;span class="icon"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;i class="fas fa-home"&gt;&lt;/i&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/a&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="navbar-item has-dropdown is-hoverable"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;a class="navbar-link"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>More Research</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="navbar-dropdown"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;a class="navbar-item" href="https://pku-dymvhumans.github.io"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>PKU-DyMVHumans</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/nav&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;section class="hero"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="hero-body"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="container is-max-desktop"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="columns is-centered"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="column has-text-centered"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;h1 class="title is-1 publication-title"&gt;Surface-SOS: Self-Supervised Object Segmentation via Neural Surface Representation&lt;/h1&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="is-size-5 publication-authors"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="author-block"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;a href="https://zhengxyun.github.io"&gt;XiaoyunZheng&lt;/a&gt;&lt;sup&gt;1, 2&lt;/sup&gt;,&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="author-block"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;a href="https://github.com/leviome"&gt;Liwei Liao&lt;/a&gt;&lt;sup&gt;1, 2&lt;/sup&gt;,&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="author-block"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;a href="https://jianbojiao.com"&gt;Jianbo Jiao&lt;/a&gt;&lt;sup&gt;4&lt;/sup&gt;,&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="author-block"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;a href="https://www.art.pku.edu.cn/szdw/qzjs/cysjyysglx/gf/index.htm"&gt;Feng Gao&lt;/a&gt;&lt;sup&gt;1&lt;/sup&gt;,&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="author-block"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;a href="https://www.ece.pku.edu.cn/info/1046/2147.htm"&gt;Ronggang Wang&lt;/a&gt;&lt;sup&gt;1*&lt;/sup&gt;&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="is-size-5 publication-authors"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="author-block"&gt;&lt;sup&gt;1&lt;/sup&gt;Peking University&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="author-block"&gt;&lt;sup&gt;2&lt;/sup&gt;Peng Cheng Laboratory&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="author-block"&gt;&lt;sup&gt;4&lt;/sup&gt;University of Birmingham&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="column has-text-centered"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="publication-links"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;!-- Paper Link. --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;span class="link-block"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;a href="https://ieeexplore.ieee.org/abstract/document/10471326"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                   </span>class="external-link button is-normal is-rounded is-dark"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;span class="icon"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                      </span>&lt;i class="fas fa-file-pdf"&gt;&lt;/i&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;span&gt;Paper&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;!-- Code Link. --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;span class="link-block"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;a href="https://github.com/zhengxyun/Surface-SOS"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                   </span>class="external-link button is-normal is-rounded is-dark"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;span class="icon"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                      </span>&lt;i class="fab fa-github"&gt;&lt;/i&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;span&gt;Code&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/span&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">              </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/section&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;section class="hero teaser"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="container is-max-desktop"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="hero-body"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;video id="teaser" autoplay muted loop playsinline height="75%"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;source src="./static/videos/daily_dayin_it30k_res.mp4"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>type="video/mp4"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/video&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;h2 class="subtitle has-text-centered"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;span class="dnerf"&gt;Surface-SOS&lt;/span&gt;, a new self- supervised learning framework for delicate segmentation from multi-view images<span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>that are geometrically consistent.</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/h2&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/section&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;section class="section"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="container is-max-desktop"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- Abstract. --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="columns is-centered has-text-centered"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="column is-four-fifths"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h2 class="title is-3"&gt;Abstract&lt;/h2&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="content has-text-justified"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>Self-supervised Object Segmentation (SOS) aims to segment objects without any annotations.<span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>Under conditions of multi-camera inputs, the structural, textural and geometrical consistency among each view<span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>can be leveraged to achieve fine- grained object segmentation.<span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>To make better use of the above information, we propose Surface representation based Self- supervised Object Segmentation (Surface-SOS),<span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>a new frame- work to segment objects for each view by 3D surface repre- sentation from multi-view images of a scene.<span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>To model high- quality geometry surfaces for complex scenes, we design a novel scene representation scheme,<span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>which decomposes the scene into two complementary neural representation modules respectively with a Signed Distance Function (SDF).</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>Moreover, Surface-SOS is able to refine single-view segmentation with multi-view unlabeled images,<span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>by introducing coarse segmentation masks as additional input.<span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>To the best of our knowledge, Surface-SOS is the first self- supervised approach that leverages neural surface representation<span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>to break the dependence on large amounts of annotated data and strong constraints.<span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>These constraints typically involve observing target objects against a static background or relying on temporal supervision in videos.<span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>Extensive experiments on standard bench- marks including LLFF, CO3D, BlendedMVS, TUM and several real-world scenes show that<span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>Surface-SOS always yields finer object masks than its NeRF-based counterparts<span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>and surpasses supervised single-view baselines remarkably.<span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!--/ Abstract. --&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/section&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span></span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;footer class="footer"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="container"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="content has-text-centered"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;a class="icon-link"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>href="./static/paper.pdf"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;i class="fas fa-file-pdf"&gt;&lt;/i&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;a class="icon-link" href="https://github.com/zhengxyun" class="external-link" disabled&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;i class="fab fa-github"&gt;&lt;/i&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="columns is-centered"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="column is-8"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="content"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>This website is licensed under a &lt;a rel="license"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                                                </span>href="http://creativecommons.org/licenses/by-sa/4.0/"&gt;Creative</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>Commons Attribution-ShareAlike 4.0 International License&lt;/a&gt;.</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>The website template is based on &lt;a href="https://github.com/nerfies/nerfies.github.io"&gt;nerfies&lt;/a&gt;.</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/footer&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://github.com/zhengxyun">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://pku-dymvhumans.github.io">
+            PKU-DyMVHumans
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Surface-SOS: Self-Supervised Object Segmentation via Neural Surface Representation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://zhengxyun.github.io">XiaoyunZheng</a><sup>1, 2</sup>,</span>
+            <span class="author-block">
+              <a href="https://github.com/leviome">Liwei Liao</a><sup>1, 2</sup>,</span>
+            <span class="author-block">
+              <a href="https://jianbojiao.com">Jianbo Jiao</a><sup>4</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.art.pku.edu.cn/szdw/qzjs/cysjyysglx/gf/index.htm">Feng Gao</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.ece.pku.edu.cn/info/1046/2147.htm">Ronggang Wang</a><sup>1*</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Peking University</span>
+            <span class="author-block"><sup>2</sup>Peng Cheng Laboratory</span>
+            <span class="author-block"><sup>4</sup>University of Birmingham</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Paper Link. -->
+              <span class="link-block">
+                <a href="https://ieeexplore.ieee.org/abstract/document/10471326"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/zhengxyun/Surface-SOS"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="75%">
+        <source src="./static/videos/daily_dayin_it30k_res.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Surface-SOS</span>, a new self- supervised learning framework for delicate segmentation from multi-view images 
+        that are geometrically consistent.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Self-supervised Object Segmentation (SOS) aims to segment objects without any annotations. 
+            Under conditions of multi-camera inputs, the structural, textural and geometrical consistency among each view 
+            can be leveraged to achieve fine- grained object segmentation. 
+          </p>
+          <p>
+            To make better use of the above information, we propose Surface representation based Self- supervised Object Segmentation (Surface-SOS), 
+            a new frame- work to segment objects for each view by 3D surface repre- sentation from multi-view images of a scene. 
+          </p>
+          <p>
+            To model high- quality geometry surfaces for complex scenes, we design a novel scene representation scheme, 
+            which decomposes the scene into two complementary neural representation modules respectively with a Signed Distance Function (SDF).
+            Moreover, Surface-SOS is able to refine single-view segmentation with multi-view unlabeled images, 
+            by introducing coarse segmentation masks as additional input. 
+          </p>
+          <p>
+            To the best of our knowledge, Surface-SOS is the first self- supervised approach that leverages neural surface representation 
+            to break the dependence on large amounts of annotated data and strong constraints. 
+            These constraints typically involve observing target objects against a static background or relying on temporal supervision in videos. 
+          </p>
+          <p>
+            Extensive experiments on standard bench- marks including LLFF, CO3D, BlendedMVS, TUM and several real-world scenes show that 
+            Surface-SOS always yields finer object masks than its NeRF-based counterparts 
+            and surpasses supervised single-view baselines remarkably. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+    
+  </div>
+</section>
+  
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/zhengxyun" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            The website template is based on <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
