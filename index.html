@@ -246,7 +246,7 @@
             a new framework to segment objects for each view by 3D surface representation from multi-view images of a scene. 
           </p>
           <p>
-            To model high- quality geometry surfaces for complex scenes, we design a novel scene representation scheme, 
+            To model high-quality geometry surfaces for complex scenes, we design a novel scene representation scheme, 
             which decomposes the scene into two complementary neural representation modules respectively with a Signed Distance Function (SDF).
             Moreover, Surface-SOS is able to refine single-view segmentation with multi-view unlabeled images, 
             by introducing coarse segmentation masks as additional input. 
@@ -268,6 +268,34 @@
     
   </div>
 </section>
+
+  
+<br><br>
+
+<div class="columns is-centered has-text-centered">
+    <h2 class="title is-3">Method Overview</h2>
+</div>
+  
+<div class="container is-max-desktop">
+      <div class="hero-body">
+        <div class="content has-text-justified">
+          <img src="./static/images/overview.png"> 
+
+          <p>
+            <b> Framework.</b> For the scene captured by N images, we use COLMAP and Mask-RCNN to get sparse 3D points 
+            and coarse object masks as co-inputs, and predict a dense, geometrical consistent object map, 
+            as well as a textural, completed background for each image. 
+            To tackle this challenging task by leveraging the existence of geometric consistency of the one-to-one dense mapping in 3D space, 
+            we decouple the scene into two complementary neural scene representation modules: 
+            a Foreground Consistent Representation (FoCoR) module and a Background Completion (BaCo) module. 
+            We build our scene representation modules upon the SDF-based neural surface representation, 
+            and incorporate multi-resolution hash encodings for training acceleration. 
+          </p>
+          
+        </div>
+    </div>
+</div>
+
   
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
