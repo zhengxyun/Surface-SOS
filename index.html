@@ -214,10 +214,14 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="75%">
+<!--       <video id="teaser" autoplay muted loop playsinline height="75%">
         <source src="./static/videos/daily_dayin_it30k_res.mp4"
                 type="video/mp4">
-      </video>
+      </video> -->
+
+      <video class="fixed-size-video" width="100%" id="ablation1" loop="" playsinline="" autoplay="" muted="" src="./static/videos/daily_dayin_it30k_res.mp4" onplay="resizeAndPlay(this)"></video>
+
+      
       <h2 class="subtitle has-text-centered">
         <span class="dnerf">Surface-SOS</span>, a new self- supervised learning framework for delicate segmentation from multi-view images 
         that are geometrically consistent.
