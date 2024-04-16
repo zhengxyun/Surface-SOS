@@ -1,5 +1,7 @@
 # Surface-SOS
 
+This is repo implementation of Surface-SOS, a Self-Supervised Object Segmentation via Neural Surface Representation.
+
 <div align="center">
   
 ### [Project page](https://zhengxyun.github.io/Surface-SOS/) · [Paper](https://ieeexplore.ieee.org/abstract/document/10471326) 
@@ -7,8 +9,6 @@
 <br/>
 
 </div>
-
-This is repo implementation of Surface-SOS, a Self-Supervised Object Segmentation via Neural Surface Representation.
 
 ## Installation
 
