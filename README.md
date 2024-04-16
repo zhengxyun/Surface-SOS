@@ -8,11 +8,10 @@ This is repo implementation of Surface-SOS, a Self-Supervised Object Segmentatio
 
 ### [Project page](https://zhengxyun.github.io/Surface-SOS/) · [Paper](https://ieeexplore.ieee.org/abstract/document/10471326) 
 
-## Installation
+## Environments
 
 To utilize multiresolution hash encoding or fully fused networks provided by tiny-cuda-nn, you should have least an RTX 2080Ti, see https://github.com/NVlabs/tiny-cuda-nn#requirements for more details.
 
-### Environments
 ```
 conda create -n sos python==3.8
 ```
@@ -56,11 +55,11 @@ Then files according to the following directory structure:
 After preparing datasets, users can train a Surface-SOS by the following command:
 
 ```
-## train Surface-SOS on COLMAP apply_mask: false
-python launch.py --config ./configs/neus-colmap.yaml --gpu 0 --train dataset.scene=daily_dayin  tag=colmap_womsk
+## train on COLMAP data without mask
+python launch.py --config ./configs/neus-colmap.yaml --gpu 0 --train dataset.scene=daily_dayin tag=colmap_womsk
 
-## train Surface-SOS on colmap apply_mask: true
-python launch.py --config ./configs/neus-colmap.yaml --gpu 1 --train dataset.scene=daily_dayin dataset.apply_mask=true  tag=colmap_wmsk
+## train on COLMAP data with mask
+python launch.py --config ./configs/neus-colmap.yaml --gpu 1 --train dataset.scene=daily_dayin dataset.apply_mask=true tag=colmap_wmsk
 
 ```
 
